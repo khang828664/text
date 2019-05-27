@@ -1569,11 +1569,11 @@ namespace GSoft.AbpZeroTemplate.Migrations
 
                     b.Property<bool>("isRentOut");
 
-                    b.Property<int>("valueAsset");
-
                     b.Property<int>("mountAsset");
 
                     b.Property<string>("nameAsset");
+
+                    b.Property<decimal>("valueAsset");
 
                     b.HasKey("Id");
 
@@ -1596,7 +1596,7 @@ namespace GSoft.AbpZeroTemplate.Migrations
 
                     b.Property<DateTime?>("UpdatedDate");
 
-                    b.Property<DateTime>("datePay");
+                    b.Property<DateTime?>("datePay");
 
                     b.Property<DateTime?>("dateRent");
 
@@ -1665,6 +1665,43 @@ namespace GSoft.AbpZeroTemplate.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DemoModels");
+                });
+
+            modelBuilder.Entity("GWebsite.AbpZeroTemplate.Core.Models.DetailAssetRent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedDate");
+
+                    b.Property<bool>("IsDelete");
+
+                    b.Property<string>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedDate");
+
+                    b.Property<int>("assetRentId");
+
+                    b.Property<DateTime>("dayPay");
+
+                    b.Property<string>("describe");
+
+                    b.Property<bool>("isPay");
+
+                    b.Property<decimal>("money");
+
+                    b.Property<string>("nameAsset");
+
+                    b.Property<float>("rate");
+
+                    b.Property<string>("rentBy");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DetailAssetRents");
                 });
 
             modelBuilder.Entity("GWebsite.AbpZeroTemplate.Core.Models.Function", b =>

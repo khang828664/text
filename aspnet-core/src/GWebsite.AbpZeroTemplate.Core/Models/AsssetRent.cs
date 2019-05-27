@@ -11,9 +11,10 @@ namespace GWebsite.AbpZeroTemplate.Core.Models
         public string nameAsset { get; set; }
         public string rentBy { get; set;  }
         public DateTime? dateRent { get; set; }
-        public DateTime datePay { get; set; }
+        public DateTime? datePay { get; set; } = null;
         public int numberRent { get; set; }
         public int numberPay { get; set; }
+     
 
     }
 }

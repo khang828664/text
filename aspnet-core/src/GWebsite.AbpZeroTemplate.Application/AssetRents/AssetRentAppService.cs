@@ -10,9 +10,10 @@ using GWebsite.AbpZeroTemplate.Core.Authorization;
 using GWebsite.AbpZeroTemplate.Core.Models;
 using System.Linq;
 using System.Linq.Dynamic.Core;
+using System;
 
 
-namespace GWebsite.AbpZeroTemplate.Web.Core.Assets
+namespace GWebsite.AbpZeroTemplate.Web.Core.AssetRents
 {
     [AbpAuthorize(GWebsitePermissions.Pages_Administration_MenuClient)]
     public class AssetRentAppService : GWebsiteAppServiceBase, IAssetRentAppService
@@ -27,6 +28,7 @@ namespace GWebsite.AbpZeroTemplate.Web.Core.Assets
 
         public void CreateOrEditAssetRent(AssetRentInput assetRentInput)
         {
+           
             if (assetRentInput.Id == 0)
             {
                 Create(assetRentInput);

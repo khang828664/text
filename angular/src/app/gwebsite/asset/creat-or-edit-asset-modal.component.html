@@ -48,7 +48,7 @@
                         <input
                             #addressInput="ngModel"
                             class="form-control"
-                            type="text"
+                            type="number"
                             name="MountAsset"
                             [(ngModel)]="asset.mountAsset"
                             required
@@ -68,6 +68,21 @@
                             [(ngModel)]="asset.valueAsset"
                             required
                             maxlength="64"
+                        />
+                        <validation-messages
+                            [formCtrl]="mountAssetInput"
+                        ></validation-messages>
+                    </div>
+                    <div class="form-group">
+                        <label>Đã thuê hết? *</label>
+                        <input
+                            #addressInput="ngModel"
+                            class="form-control"
+                            type="checkbox"
+                            checked="true"
+                            name="IsRentOut"
+                            [(ngModel)]="asset.isRentOut"
+                            required
                         />
                         <validation-messages
                             [formCtrl]="mountAssetInput"

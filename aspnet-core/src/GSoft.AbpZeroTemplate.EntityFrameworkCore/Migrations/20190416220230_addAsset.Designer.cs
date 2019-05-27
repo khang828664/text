@@ -1575,6 +1575,7 @@ namespace GSoft.AbpZeroTemplate.Migrations
 
                     b.Property<string>("nameAsset");
 
+                    b.Property<decimal>("valueAsset");
                     b.HasKey("Id");
 
                     b.ToTable("Assets");
